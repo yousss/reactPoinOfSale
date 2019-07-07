@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 // Externals
 import classNames from 'classnames';
@@ -156,14 +156,16 @@ class UsersTable extends Component {
                           >
                             {getInitials(user.name)}
                           </Avatar>
-                          <Link to="#">
-                            <Typography
-                              className={classes.nameText}
-                              variant="body1"
-                            >
-                              {user.name}
-                            </Typography>
-                          </Link>
+                          <NavLink>
+                            <Link to="#">
+                              <Typography
+                                className={classes.nameText}
+                                variant="body1"
+                              >
+                                {user.name}
+                              </Typography>
+                            </Link>
+                          </NavLink>
                         </div>
                       </TableCell>
                       <TableCell className={classes.tableCell}>

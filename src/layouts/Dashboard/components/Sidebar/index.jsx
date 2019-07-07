@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Externals
 import classNames from 'classnames';
@@ -35,6 +35,13 @@ import {
 
 // Component styles
 import styles from './styles';
+
+
+const CollisionLink = React.forwardRef((props, ref) => (
+  <Link innerRef={ref} {...props} />
+));
+
+
 
 class Sidebar extends Component {
   render() {
@@ -86,7 +93,7 @@ class Sidebar extends Component {
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
-            component={NavLink}
+            component={CollisionLink}
             to="/dashboard"
           >
             <ListItemIcon className={classes.listItemIcon}>
@@ -100,7 +107,7 @@ class Sidebar extends Component {
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
-            component={NavLink}
+            component={CollisionLink}
             to="/users"
           >
             <ListItemIcon className={classes.listItemIcon}>
@@ -114,7 +121,35 @@ class Sidebar extends Component {
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
-            component={NavLink}
+            component={CollisionLink}
+            to="/roles"
+          >
+            <ListItemIcon className={classes.listItemIcon}>
+              <PeopleIcon />
+            </ListItemIcon>
+            <ListItemText
+              classes={{ primary: classes.listItemText }}
+              primary="Roles"
+            />
+          </ListItem>
+          <ListItem
+            activeClassName={classes.activeListItem}
+            className={classes.listItem}
+            component={CollisionLink}
+            to="/permissions"
+          >
+            <ListItemIcon className={classes.listItemIcon}>
+              <PeopleIcon />
+            </ListItemIcon>
+            <ListItemText
+              classes={{ primary: classes.listItemText }}
+              primary="Permissions"
+            />
+          </ListItem>
+          <ListItem
+            activeClassName={classes.activeListItem}
+            className={classes.listItem}
+            component={CollisionLink}
             to="/products"
           >
             <ListItemIcon className={classes.listItemIcon}>
@@ -128,7 +163,7 @@ class Sidebar extends Component {
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
-            component={NavLink}
+            component={CollisionLink}
             to="/sign-in"
           >
             <ListItemIcon className={classes.listItemIcon}>
@@ -142,7 +177,7 @@ class Sidebar extends Component {
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
-            component={NavLink}
+            component={CollisionLink}
             to="/typography"
           >
             <ListItemIcon className={classes.listItemIcon}>
@@ -156,7 +191,7 @@ class Sidebar extends Component {
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
-            component={NavLink}
+            component={CollisionLink}
             to="/icons"
           >
             <ListItemIcon className={classes.listItemIcon}>
@@ -170,7 +205,7 @@ class Sidebar extends Component {
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
-            component={NavLink}
+            component={CollisionLink}
             to="/account"
           >
             <ListItemIcon className={classes.listItemIcon}>
@@ -184,7 +219,7 @@ class Sidebar extends Component {
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
-            component={NavLink}
+            component={CollisionLink}
             to="/settings"
           >
             <ListItemIcon className={classes.listItemIcon}>
